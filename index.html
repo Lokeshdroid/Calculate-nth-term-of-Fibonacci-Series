@@ -1,0 +1,61 @@
+<!--Calculate nth term of Fibonacci Series-->
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>
+         Calculate nth term of Fibonacci Series
+      </title>
+      <!--CSS code-->
+      <style>
+         body{
+         text-align: center;
+         background: #00ECB9;
+         font-family: times new roman;
+         }
+         h1{
+         font-size: 60px;
+         }
+         h2{
+         font-size: 40px;
+         }
+         input{
+         font-size: 25px;
+         }
+         textarea{
+         font-size: 25px;
+         }
+      </style>
+ <!--Javascript code-->
+ <script type="text/javascript">
+function nthFibonacci() {
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    let num = Number(document.getElementById("num").value);
+    if (num >= 0) {
+      //iterate till the given num
+      for (let i = 2; i <= num; i++) {
+        //sum of last two terms
+        c = BigInt(a) + BigInt(b);
+    
+        //assign the last value to first     
+        a = BigInt(b)    
+        //assign the sum to the last
+        b = BigInt(c)    
+      }      
+      document.getElementById("answer").value = c;
+    } 
+   else {
+      alert("Please, Enter positive Numbers only!!!");
+    }
+}
+   </script>
+  </head>
+   <body>
+      <h1 style="">Calculate nth term of Fibonacci Series </h1>
+      <h2 >Enter nth Number: </h2>
+      <input type="text" id="num"/><br><br>
+      <input type="button" id="btnSum" value="Calculate" onClick="nthFibonacci()" /><br><br>
+      <textarea  id="answer" cols="25" rows="4"></textarea>
+ </body>
+</html>
